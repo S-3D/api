@@ -34,9 +34,9 @@ class DetailQuotidien
     #[Groups([ 'quotidien:read', 'quotidien:write', 'detail:read', 'detail:write'  ])]
     private ?Projet $projet = null;
 
-    #[ORM\Column]
+    #[ORM\Column (type:"integer",  nullable: true)]
     #[Groups([ 'quotidien:read', 'quotidien:write', 'detail:read', 'detail:write'  ])]
-    private ?float $duree = null;
+    private ?int $duree = null;
 
     public function getId(): ?int
     {
@@ -79,12 +79,12 @@ class DetailQuotidien
         return $this;
     }
 
-    public function getDuree(): ?float
+    public function getDuree(): ?int
     {
         return $this->duree;
     }
 
-    public function setDuree(float $duree): static
+    public function setDuree(?int $duree): static
     {
         $this->duree = $duree;
 

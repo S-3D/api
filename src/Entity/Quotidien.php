@@ -23,6 +23,7 @@ class Quotidien
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups([ 'quotidien:read', 'quotidien:write', 'detail:read', 'detail:write'  ])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE)]
