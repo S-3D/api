@@ -34,7 +34,7 @@ class Quotidien
     #[Groups([ 'quotidien:read', 'quotidien:write', 'detail:read', 'detail:write'  ])]
     private ?User $User = null;
 
-    #[ORM\OneToMany(mappedBy: 'quotidien', targetEntity: DetailQuotidien::class)]
+    #[ORM\OneToMany(mappedBy: 'quotidien', targetEntity: DetailQuotidien::class, cascade:['persist', 'remove'])]
     #[Groups([ 'quotidien:read', 'quotidien:write', 'detail:read', 'detail:write'  ])]
     private Collection $detailQuotidien;
 

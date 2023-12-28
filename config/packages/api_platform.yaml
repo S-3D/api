@@ -8,6 +8,8 @@ api_platform:
         jsonld: ['application/ld+json']
         jsonopenapi: ['application/vnd.openapi+json']
         html: ['text/html']
+    eager_loading:
+        max_joins: 100
     defaults:
         stateless: true
         cache_headers:
